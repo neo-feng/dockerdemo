@@ -1,0 +1,42 @@
+paths:
+/api/dockertest:
+tags:
+      - "Test Api"
+post:
+      summary: "Test Api"
+      description: "This is a Test Api"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Accepts a Name as String"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            name:
+              type: "string"
+              format: "string"
+              example : "Lucas"                           
+      responses:
+        405:
+          description: "Invalid input"
+        200:
+          description: "Fetched Data"
+
+get:
+      summary: "Test Api"
+      description: "This is a Test Api"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        405:
+          description: "Invalid input"
+        200:
+          description: "Fetched Data"
+    

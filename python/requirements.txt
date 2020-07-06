@@ -1,0 +1,5 @@
+flask
+flasgger
+waitress
+requests
+flask_cors

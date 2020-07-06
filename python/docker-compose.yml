@@ -1,0 +1,22 @@
+version: "2.1"
+
+services:
+  tp:
+    image: hello_name
+    container_name: testpython_name
+    restart: always
+    mem_limit: 500m
+    environment:
+        - MAX_HEAP=500m
+        - TZ=Asia/Shanghai    
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+        - 9527:5000
+
+networks:
+  sonarnet:
+    driver: bridge
+

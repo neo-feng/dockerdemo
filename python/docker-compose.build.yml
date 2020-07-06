@@ -1,0 +1,6 @@
+version: '2.1'
+services:
+  hello_name:
+    build: . 
+    expose:
+      - 9527
