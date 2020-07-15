@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello_lucas
+  labels:
+    run: hello_lucas
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    targetPort: 5000
+    nodePort: 9527
+    protocol: TCP
+    name: httpsport
+  selector:
+    run: hello_lucas
+  externalTrafficPolicy: Cluster
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello_lucas
+spec:
+  selector:
+    matchLabels:
+      run: hello_lucas
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        run: hello_lucas
+    spec:
+      containers:
+      - name: hello_lucas
+        image: hello_lucas:1.0
+        # imagePullPolicy: {{imagePullPolicy}}
+        resources:
+          requests:
+            memory: "50Mi"
+          limits:
+            memory: "700Mi"
+            # cpu: "250m"
+        ports:
+        - containerPort: 5000
+        # livenessProbe:
+        #     httpGet:
+        #             scheme: HTTP
+        #             path: /
+        #             port: 5000
+        #     initialDelaySeconds: 600
+        #     periodSeconds: 10
+        # readinessProbe:
+        #     httpGet:
+        #             scheme: HTTP
+        #             path: /
+        #             port: 5000
+        #     initialDelaySeconds: 180
+        #     periodSeconds: 10
+        env:
+        - name: FOR_GODS_SAKE_PLEASE_REDEPLOY
+          value: 2019-02-20T09:41:42Z
+    #   imagePullSecrets:
+    #   - name: mz-regcred

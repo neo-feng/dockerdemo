@@ -1,12 +1,12 @@
 # build your image 
  - docker build -t hello_{{your_name}} .
- - e.g. docker build -t hello_lucas .
+ - e.g. docker build -t hello_lucas:1.0 .
 
 # check your image
  - docker images
 
 # create container
- - docker run --name hello_lucas -d -p 9527:5000 hello_lucas
+ - docker run --name hello_lucas -d -p 9527:5000 hello_lucas:1.0
 
 # verify container
  - docker ps -a
