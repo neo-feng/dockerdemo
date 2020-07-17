@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.mzinno:models:2018.04.r4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mzinno/models/2018.04.r4-SNAPSHOT/models-2018.04.r4-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mzinno/models/2018.04.r4-SNAPSHOT/models-2018.04.r4-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mzinno/models/2018.04.r4-SNAPSHOT/models-2018.04.r4-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

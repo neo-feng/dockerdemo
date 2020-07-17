@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  hello_name:
+  hello_python_lucas:
     build: . 
     expose:
       - 9527

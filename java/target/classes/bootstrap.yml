@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-city
+  cloud:
+    config:
+      label: master
+      fail-fast: true
+      password: password
+      username: user
+      uri: http://localhost:8888
+
+feign:
+  hystrix:
+    enabled: false
+#server:
+#  port: 8765

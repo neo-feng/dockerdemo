@@ -2,8 +2,8 @@ version: "2.1"
 
 services:
   tp:
-    image: hello_name
-    container_name: testpython_name
+    image: hello_python_lucas:1.0
+    container_name: hello_python_lucas
     restart: always
     mem_limit: 500m
     environment:
