@@ -13,4 +13,5 @@
  - docker logs hello_python_lucas 
 
 # verify web api
- - browser - http://localhost:9527/api/#!/Test32Api/post_api_dockertest 
+ - browser - http://localhost:9527/api/
+ or curl http://localhost:9527/api/

@@ -1,8 +1,4 @@
-com\mzinno\sampleservice\city\ServiceCityApplication.class
-com\mzinno\sampleservice\city\service\CityService.class
-com\mzinno\sampleservice\city\config\FeignConfig.class
-com\mzinno\sampleservice\city\service\MonitorAspect.class
-com\mzinno\sampleservice\city\config\MyWebAppConfigurer.class
-com\mzinno\sampleservice\city\controller\CityController.class
-com\mzinno\sampleservice\city\service\CityServiceImpl.class
-com\mzinno\sampleservice\city\config\SwaggerConfig.class
+com\docker\test\config\SwaggerConfig.class
+com\docker\test\HelloApplication.class
+com\docker\test\config\MyWebAppConfigurer.class
+com\docker\test\controller\HelloController.class
