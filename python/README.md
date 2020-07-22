@@ -1,17 +1,30 @@
- - cd /home/sample1/dockerdemo/python
-# build your image 
- - sudo docker build -t hello_python_lucas:1.0 .
+# practice
 
-# check your image
- - sudo docker images
+## go to work folder
 
-# create container
- - sudo docker run --name hello_python_lucas -d -p 9527:5000 hello_python_lucas:1.0
+- cd /home/sample1/dockerdemo/python
 
-# verify container
- - sudo docker ps -a
- - sudo docker logs hello_python_lucas 
+## build your image
 
-# verify web api
- - browser - http://localhost:9527/api/
- or curl http://localhost:9527/api/
+- sudo docker build -t hello_python_lucas:1.0 .
+
+## check your image
+
+- sudo docker images
+
+## create container
+
+- sudo docker run --name hello_python_lucas -d -p 9527:5000 hello_python_lucas:1.0
+
+## verify container
+
+- sudo docker ps -a
+
+## verify web api
+
+- browser - http://localhost:9527/api/
+- curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{"name": "Lucas"}' 'http://localhost:9527/api/dockertest'
+- sudo docker logs hello_python_lucas
+
+## repo
+- https://dev.azure.com/FENGNX/testproject/_git/dockerdemo

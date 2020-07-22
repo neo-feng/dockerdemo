@@ -39,6 +39,7 @@ swagger = Swagger(app, config=swagger_config, template=template)
 def home():
     input_json = request.get_json()
     name = str(input_json["name"])
+    print("Hello " + name + ", we have Flask in a Docker container!!")
     return json.dumps({"result": "Hello " + name + ", we have Flask in a Docker container!!"})
 
 if  __name__  ==  "__main__":
