@@ -13,7 +13,7 @@ PASSWORD="Lnadmin_123456" #替换成你的密码
 #OSDISKSIZE=50
 STORAGETYPE="Standard_SSD" #Premium_LRS"
 #AVAILABILITYSET="avset-bat1-"$REGION
-NSG="dockervm1427"
+NSG="dockervm1-nsg"
 
 iSTART=2          #起始序号
 VMCOUNT=2      #结束序号
@@ -73,6 +73,7 @@ for i in `seq $iSTART $VMCOUNT`; do
     --size $VMSIZE --nics $VMNAME$i"-nic" \
  #   --availability-set $AVAILABILITYSET \
     --storage-sku $STORAGETYPE
+    --resource-group $RGNAME
 
 
   # 执行自定义初始化脚本
