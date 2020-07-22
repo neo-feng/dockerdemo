@@ -15,3 +15,5 @@
 # verify web api
  - browser - http://localhost:9526/api/dockertest
  or curl http://localhost:9526/api/dockertest
+
+ https://dev.azure.com/FENGNX/testproject/_git/dockerdemo 

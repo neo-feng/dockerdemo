@@ -24,7 +24,6 @@
 
 - browser - http://localhost:9527/api/
 - curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{"name": "Lucas"}' 'http://localhost:9527/api/dockertest'
-- sudo docker logs hello_python_lucas
 
 ## repo
 - https://dev.azure.com/FENGNX/testproject/_git/dockerdemo
