@@ -38,6 +38,8 @@ starttime=`date +'%Y-%m-%d %H:%M:%S'`
 #   --protocol tcp --direction inbound --source-address-prefix '*' --source-port-range '*'  \
 #   --destination-address-prefix '*' --destination-port-range 22 --access allow --priority 1000
 
+az login
+
 echo 创建n个公网IP和VM网卡
 for i in `seq $iSTART $VMCOUNT`; do
 {
