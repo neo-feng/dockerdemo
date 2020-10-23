@@ -34,6 +34,12 @@ template = dict(
 app.json_encoder = LazyJSONEncoder
 swagger = Swagger(app, config=swagger_config, template=template)
 
+@app.route("/", methods=["GET"]) # this route is the default one
+def Hello():
+    print("Hello, we have Flask in a Docker container!!")
+    return json.dumps({"result": "Hello, we have Flask in a Docker container!!"})
+
+
 @app.route("/api/dockertest", methods=["POST"]) # this route is the default one
 @swag_from("swagger_config_test.yml")
 def home():
