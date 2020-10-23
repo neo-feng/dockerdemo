@@ -4,6 +4,9 @@
 
 - cd /home/sample1/dockerdemo/python
 
+## start without docker
+- python main.py
+
 ## build your image
 
 - sudo docker build -t hello_python_lucas:1.0 .
