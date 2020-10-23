@@ -36,9 +36,13 @@
 - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 628006477714.dkr.ecr.us-east-2.amazonaws.com
 - docker push 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
 
+# remote to EC2 on AWS or any other machine you get
+- ssh -i "teststandard.pem" ec2-user@ec2-13-59-164-106.us-east-2.compute.amazonaws.com
+
 ## pull image from another environment
 - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 628006477714.dkr.ecr.us-east-2.amazonaws.com
 - docker pull  628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
 
-## run
+## run and verify
 - docker run --name hello_python_lucas -d -p 9527:5000 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
+- curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{"name": "Lucas"}' 'http://localhost:9527/api/dockertest'
