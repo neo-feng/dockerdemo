@@ -12,19 +12,19 @@
 - (pip3, python3ß)
 ## build your image
 
-- sudo docker build -t hello_python_lucas:1.0 .
+- docker build -t hello_python_lucas:1.0 .
 
 ## check your image
 
-- sudo docker images
+- docker images
 
 ## create container
 
-- sudo docker run --name hello_python_lucas -d -p 9527:5000 hello_python_lucas:1.0
+- docker run --name hello_python_lucas -d -p 9527:5000 hello_python_lucas:1.0
 
 ## verify container
 
-- sudo docker ps -a
+- docker ps -a
 
 ## verify web api
 - browser - http://localhost:9527
@@ -32,9 +32,13 @@
 - curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{"name": "Lucas"}' 'http://localhost:9527/api/dockertest'
 
 ## push image to ECR
-- 
+- docker tag hello_python_lucas:1.0 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
+- aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 628006477714.dkr.ecr.us-east-2.amazonaws.com
+- docker push 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
 
 ## pull image from another environment
-- 
+- aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 628006477714.dkr.ecr.us-east-2.amazonaws.com
+- docker pull  628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
 
 ## run
+- docker run --name hello_python_lucas -d -p 9527:5000 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
