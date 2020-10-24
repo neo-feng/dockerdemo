@@ -9,7 +9,7 @@ spec:
   ports:
   - port: 5000
     targetPort: 5000
-    nodePort: 9527
+    nodePort: 20000
     protocol: TCP
     name: httpsport
   selector:
