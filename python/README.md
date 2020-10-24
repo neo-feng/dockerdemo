@@ -31,6 +31,12 @@
 - browser - http://localhost:9527/api/
 - curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{"name": "Lucas"}' 'http://localhost:9527/api/dockertest'
 
+## push image to docker hub
+- docker tag hello_python_lucas:1.0 neofeng/hello_python_lucas:1.0
+- docker login --username neofeng
+- docker push neofeng/hello_python_lucas:1.0
+
+
 ## push image to ECR
 - docker tag hello_python_lucas:1.0 628006477714.dkr.ecr.us-east-2.amazonaws.com/hello_python_lucas:1.0
 - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 628006477714.dkr.ecr.us-east-2.amazonaws.com

@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: hello_lucas
-        image: hello_lucas:1.0
+        image: neofeng/hello_python_lucas:1.0
         # imagePullPolicy: {{imagePullPolicy}}
         resources:
           requests:
