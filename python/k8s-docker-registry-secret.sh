@@ -1,6 +1,6 @@
 # refresh k8s docker-registry secret with ecr password which expire every 12 hours
 #!/bin/bash
-
+# note: aws ec2内访问ecr不需要secret, 配置好iam即可
 set +x #disable logs to prevent printing password
 PASS=$(aws ecr get-login-password --region us-east-2)
 kubectl delete secret aws-ecr-secret
