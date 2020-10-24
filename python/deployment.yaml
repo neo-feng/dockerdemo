@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello_lucas
+  name: hello-lucas
   labels:
-    run: hello_lucas
+    run: hello-lucas
 spec:
   type: NodePort
   ports:
@@ -13,17 +13,17 @@ spec:
     protocol: TCP
     name: httpsport
   selector:
-    run: hello_lucas
+    run: hello-lucas
   externalTrafficPolicy: Cluster
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello_lucas
+  name: hello-lucas
 spec:
   selector:
     matchLabels:
-      run: hello_lucas
+      run: hello-lucas
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -32,10 +32,10 @@ spec:
   template:
     metadata:
       labels:
-        run: hello_lucas
+        run: hello-lucas
     spec:
       containers:
-      - name: hello_lucas
+      - name: hello-lucas
         image: neofeng/hello_python_lucas:1.0
         # imagePullPolicy: {{imagePullPolicy}}
         resources:
